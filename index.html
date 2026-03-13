@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heat Legends Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Heat Legends Tracker</h1>
+    </header>
+    <main>
+        <nav id="home-nav">
+            <ul>
+                <li><a href="drivers.html">Drivers</a></li>
+                <li><a href="index.html#tracks">Tracks</a></li>
+                <li><a href="index.html#championships">Championships</a></li>
+                <li><a href="#">Leaderboard</a> <!-- future --> </li>
+            </ul>
+        </nav>
+
+        <section id="tracks">
+            <h2>Tracks</h2>
+            <ul id="track-list"></ul>
+            <!-- tracks are hardcoded in code; editing is not exposed in UI -->
+        </section>
+        <hr>
+        <section id="racers">
+            <h2>Racers</h2>
+            <ul id="racer-list"></ul>
+            <form id="racer-form" onsubmit="return false;">
+                <input type="text" id="racer-first" placeholder="First name" required>
+                <input type="text" id="racer-last" placeholder="Last name" required>
+                <input type="text" id="racer-notes" placeholder="Notes">
+                <button id="racer-add-btn" type="button">Add</button>
+            </form>
+        </section>
+        <hr>
+        <section id="races">
+            <h2>Races</h2>
+            <form id="race-form" onsubmit="return false;">
+                <label for="race-track">Track:</label>
+                <select id="race-track"></select>
+                <div id="race-positions"></div>
+                <button id="race-add-btn" type="button">Record race</button>
+            </form>
+            <ul id="race-list"></ul>
+        </section>
+        <hr>
+        <section id="championships">
+            <h2>Championships</h2>
+            <form id="year-form" onsubmit="return false;">
+                <input type="text" id="year-name" placeholder="Year name" required>
+                <div id="year-races"></div>
+                <button id="year-add-btn" type="button">Create championship</button>
+            </form>
+            <ul id="year-list"></ul>
+        </section>
+        <p>Welcome! Begin tracking your races.</p>
+        <hr>
+        <section id="data">
+            <h2>Data</h2>
+            <button id="export-btn" type="button">Export JSON</button>
+            <input type="file" id="import-file" accept="application/json">
+        </section>
+    </main>
+    <script type="module" src="app.js" defer></script>
+</body>
+</html>

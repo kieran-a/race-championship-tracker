@@ -1,0 +1,117 @@
+/* Mobile-first base styles */
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+}
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+/* make forms stack nicely */
+form input[type=text],
+form select,
+form button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+}
+
+form input[type=number] {
+    width: 4rem;
+}
+
+#race-positions {
+    overflow-x: auto;
+}
+
+#year-races .year-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#year-races .year-row label {
+    flex: 1;
+    white-space: nowrap;
+}
+@media (min-width: 600px) {
+    body {
+        padding: 2rem;
+    }
+}
+
+.race-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+.race-row input {
+    width: 4rem;
+}
+
+/* drivers page styles */
+#driver-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: calc(100vh - 6rem); /* allow scrolling within main area */
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.driver-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* remove extra padding per request */
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    min-height: 170px; /* increased by ~50px */
+    position: relative;
+}
+
+
+.driver-card img {
+    /* image should occupy roughly two thirds of the card width (double previous) */
+    width: 66.666%;
+    height: 100%;
+    object-fit: cover;
+    /* semicircle on the left edge now that the image is on the left */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* default order (image first) so it appears on the left side */
+    /* add some spacing between image and text */
+    margin-right: 1rem;
+}
+
+.driver-card .name {
+    flex: 1;
+    font-weight: bold;
+    padding-left: 1rem; /* keep some space from the image */
+}
+
+.driver-card .flag {
+    order: 3;
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
