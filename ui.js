@@ -1,4 +1,5 @@
 import { loadCollection, addItem, updateItem, deleteItem, generateId, saveCollection } from './storage.js';
+import { initialData } from './models.js';
 
 // helpers
 function $(selector) { return document.querySelector(selector); }
@@ -32,11 +33,7 @@ function renderTracks() {
 function initDefaultTracks() {
     const existing = loadCollection('tracks');
     if (existing.length === 0) {
-        const defaultTracks = [
-            { id: generateId('track-'), name: 'USA', layout: 'base' },
-            { id: generateId('track-'), name: 'France', layout: 'base' }
-        ];
-        saveCollection('tracks', defaultTracks);
+        saveCollection('tracks', initialData.tracks);
     }
 }
 
@@ -59,12 +56,7 @@ function renderRacers() {
 function initDefaultRacers() {
     const existing = loadCollection('racers');
     if (existing.length === 0) {
-        const defaultRacers = [
-            { id: generateId('racer-'), firstName: 'Alice', lastName: 'Anderson', notes: '' },
-            { id: generateId('racer-'), firstName: 'Bob', lastName: 'Brown', notes: '' },
-            { id: generateId('racer-'), firstName: 'Charlie', lastName: 'Clark', notes: '' }
-        ];
-        saveCollection('racers', defaultRacers);
+        saveCollection('racers', initialData.racers);
     }
 }
 
