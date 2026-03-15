@@ -40,7 +40,27 @@
 // A simple module export to reference these shapes
 export const schemas = {
   track: ['id', 'name', 'layout'],
-  racer: ['id', 'firstName', 'lastName', 'notes'],
+  racer: ['id', 'firstName', 'lastName', 'colour', 'country', 'image'],
   race: ['id', 'trackId', 'date', 'startingPositions', 'finishedPositions'],
   year: ['id', 'name', 'raceIds']
+};
+
+export const initialData = {
+  tracks: [
+    { id: 't1', name: 'USA', layout: 'base' },
+    { id: 't2', name: 'FRANCE', layout: 'base' },
+    { id: 't3', name: 'ITALY', layout: 'base' },
+    { id: 't4', name: 'GREAT BRITAIN', layout: 'base' },
+    { id: 't5', name: 'JAPAN', layout: 'rain' },
+    { id: 't6', name: 'MEXICO', layout: 'rain' },
+  ],
+  racers: [
+    { id: 'r1', firstName: 'Alexander', lastName: 'McKenzie', colour: 'green', country: 'gb', image: 'images/alice.png' },
+    { id: 'r2', firstName: 'Lorenzo', lastName: 'Vitali', colour: 'red', country: 'it', image: 'images/lorenzo.png' },
+    { id: 'r3', firstName: 'Pierre', lastName: 'Dubois', colour: 'blue', country: 'fr', image: 'images/pierre.png' },
+    { id: 'r4', firstName: 'Willem', lastName: 'van der Velde', colour: 'orange', country: 'nl', image: 'images/willem.png' },
+    { id: 'r5', firstName: 'Tommy', lastName: 'Rourke', colour: 'black ', country: 'us', image: 'images/tommy.png' },
+    { id: 'r6', firstName: 'Taro', lastName: 'Nishimura', colour: 'grey', country: 'jp', image: 'images/taro.png' },
+    { id: 'r7', firstName: 'João', lastName: 'Ribeiro', colour: 'yellow', country: 'br', image: 'images/joao.png' }
+  ]
 };
