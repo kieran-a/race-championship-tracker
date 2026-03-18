@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaderboard - Heat Legends Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Leaderboard</h1>
+        <p><a href="index.html">&larr; Home</a></p>
+    </header>
+    <main>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                    <th>Wins</th>
+                    <th>Podiums</th>
+                    <th>Entries</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+            </tbody>
+        </table>
+        <p id="no-races" style="display:none;">No race data available yet.</p>
+    </main>
+    <script type="module" src="leaderboard.js" defer></script>
+</body>
+</html>
