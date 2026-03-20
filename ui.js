@@ -5,7 +5,21 @@ import { initialData } from './models.js';
 function $(selector) { return document.querySelector(selector); }
 function createElement(tag, props = {}, ...children) {
     const el = document.createElement(tag);
-    Object.entries(props).forEach(([k,v]) => el[k] = v);
+    Object.entries(props).forEach(([k,v]) => {
+        if (k.startsWith('on')) {
+            // Event handlers like onclick
+            el[k] = v;
+        } else if (k === 'className') {
+            // Special case: className property
+            el.className = v;
+        } else if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
+            // HTML attributes (data-*, type, placeholder, min, max, style, etc.)
+            el.setAttribute(k, v);
+        } else {
+            // Other properties
+            el[k] = v;
+        }
+    });
     children.forEach(c => el.append(typeof c === 'string' ? document.createTextNode(c) : c));
     return el;
 }
